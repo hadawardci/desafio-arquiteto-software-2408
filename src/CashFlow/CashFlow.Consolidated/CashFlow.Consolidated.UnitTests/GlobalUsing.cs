@@ -1,0 +1,11 @@
+﻿global using Bogus;
+global using CashFlow.Consolidated.Application.Events;
+global using CashFlow.Consolidated.Application.ViewConsolidatedDaily;
+global using CashFlow.Consolidated.Domain.ConsolidatedDailyRootAggregate;
+global using CashFlow.Consolidated.Domain.Gateways;
+global using CashFlow.Consolidated.Domain.SharedKernel.Events;
+global using CashFlow.Consolidated.Domain.SharedKernel.Outputs;
+global using NSubstitute;
+global using System;
+global using System.Linq.Expressions;
+global using Xunit;

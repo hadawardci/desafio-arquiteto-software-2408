@@ -1,0 +1,159 @@
+{
+  "id": "cash-flow",
+  "realm": "cash-flow",
+  "enabled": true,
+  "roles": {
+    "realm": [
+      {
+        "name": "add-entry",
+        "description": "Permission to add entries"
+      },
+      {
+        "name": "view-entry",
+        "description": "Permission to view entries"
+      },
+      {
+        "name": "view-consolidated",
+        "description": "Permission to view consolidated data"
+      },
+      {
+        "name": "partial-daily",
+        "description": "Permission to get partial data by days from entries"
+      }
+    ],
+    "client": {
+      "client-web": [
+        {
+          "name": "add-entry",
+          "description": "Client permission to add entries"
+        },
+        {
+          "name": "view-entry",
+          "description": "Client permission to view entries"
+        },
+        {
+          "name": "view-consolidated",
+          "description": "Client permission to view consolidated data"
+        },
+        {
+          "name": "partial-daily",
+          "description": "Permission to get partial data by days from entries"
+        }
+      ]
+    }
+  },
+  "clients": [
+    {
+      "clientId": "client-web",
+      "enabled": true,
+      "directAccessGrantsEnabled": true,
+      "publicClient": false,
+      "serviceAccountsEnabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "my-client-secret",
+      "adminUrl": "http://localhost:8080",
+      "redirectUris": [
+        "https://localhost:7107/*",
+        "https://localhost:7015"
+      ],
+      "protocol": "openid-connect",
+      "webOrigins": [
+        "*"
+      ],
+      "attributes": {
+        "access.token.lifespan": "36000",
+        "refresh.token.lifespan": "172800"
+      },
+      "protocolMappers": [
+        {
+          "name": "audience",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "config": {
+            "included.client.audience": "client-web",
+            "id.token.claim": "true",
+            "access.token.claim": "true"
+          }
+        },
+        {
+          "name": "roles",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-realm-role-mapper",
+          "config": {
+            "claim.name": "realm_access",
+            "jsonType.label": "JSON",
+            "multivalued": "true",
+            "access.token.claim": "true",
+            "id.token.claim": "true",
+            "userinfo.token.claim": "true"
+          }
+        },
+        {
+          "name": "scope-mapper",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-client-role-mapper",
+          "config": {
+            "claim.name": "resource_access",
+            "multivalued": "true",
+            "access.token.claim": "true",
+            "id.token.claim": "true",
+            "userinfo.token.claim": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "enabled": true,
+      "firstName": "Admin",
+      "lastName": "User",
+      "email": "admin@example.com",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "senha",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "add-entry",
+        "view-entry",
+        "view-consolidated"
+      ],
+      "clientRoles": {
+        "client-web": [
+          "add-entry",
+          "view-entry",
+          "view-consolidated"
+        ]
+      }
+    },
+    {
+      "username": "robot",
+      "enabled": true,
+      "firstName": "Mr",
+      "lastName": "Robot",
+      "email": "mr-robot@example.com",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "senha",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "partial-daily"
+      ],
+      "clientRoles": {
+        "client-web": [
+          "partial-daily"
+        ]
+      },
+      "attributes": {
+        "short-session": "true"
+      }
+    }
+  ]
+}

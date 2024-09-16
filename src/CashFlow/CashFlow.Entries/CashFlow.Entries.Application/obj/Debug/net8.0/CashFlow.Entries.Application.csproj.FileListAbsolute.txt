@@ -1,0 +1,16 @@
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Entries\CashFlow.Entries.Application\bin\Debug\net8.0\CashFlow.Entries.Application.deps.json
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Entries\CashFlow.Entries.Application\bin\Debug\net8.0\CashFlow.Entries.Application.dll
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Entries\CashFlow.Entries.Application\bin\Debug\net8.0\CashFlow.Entries.Application.pdb
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Entries\CashFlow.Entries.Application\obj\Debug\net8.0\CashFlow.Entries.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Entries\CashFlow.Entries.Application\obj\Debug\net8.0\CashFlow.Entries.Application.AssemblyInfoInputs.cache
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Entries\CashFlow.Entries.Application\obj\Debug\net8.0\CashFlow.Entries.Application.AssemblyInfo.cs
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Entries\CashFlow.Entries.Application\obj\Debug\net8.0\CashFlow.Entries.Application.csproj.CoreCompileInputs.cache
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Entries\CashFlow.Entries.Application\obj\Debug\net8.0\CashFlow.Entries.Application.sourcelink.json
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Entries\CashFlow.Entries.Application\obj\Debug\net8.0\CashFlow.Entries.Application.dll
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Entries\CashFlow.Entries.Application\obj\Debug\net8.0\refint\CashFlow.Entries.Application.dll
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Entries\CashFlow.Entries.Application\obj\Debug\net8.0\CashFlow.Entries.Application.pdb
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Entries\CashFlow.Entries.Application\obj\Debug\net8.0\ref\CashFlow.Entries.Application.dll
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Entries\CashFlow.Entries.Application\obj\Debug\net8.0\CashFlow.Entries.Application.csproj.AssemblyReference.cache
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Entries\CashFlow.Entries.Application\bin\Debug\net8.0\CashFlow.Entries.Domain.dll
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Entries\CashFlow.Entries.Application\bin\Debug\net8.0\CashFlow.Entries.Domain.pdb
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Entries\CashFlow.Entries.Application\obj\Debug\net8.0\CashFlow.D5F31BE4.Up2Date

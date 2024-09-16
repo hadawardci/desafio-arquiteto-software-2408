@@ -1,0 +1,12 @@
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Consolidated\CashFlow.Consolidated.Domain\bin\Debug\net8.0\CashFlow.Consolidated.Domain.deps.json
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Consolidated\CashFlow.Consolidated.Domain\bin\Debug\net8.0\CashFlow.Consolidated.Domain.dll
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Consolidated\CashFlow.Consolidated.Domain\bin\Debug\net8.0\CashFlow.Consolidated.Domain.pdb
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Consolidated\CashFlow.Consolidated.Domain\obj\Debug\net8.0\CashFlow.Consolidated.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Consolidated\CashFlow.Consolidated.Domain\obj\Debug\net8.0\CashFlow.Consolidated.Domain.AssemblyInfoInputs.cache
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Consolidated\CashFlow.Consolidated.Domain\obj\Debug\net8.0\CashFlow.Consolidated.Domain.AssemblyInfo.cs
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Consolidated\CashFlow.Consolidated.Domain\obj\Debug\net8.0\CashFlow.Consolidated.Domain.csproj.CoreCompileInputs.cache
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Consolidated\CashFlow.Consolidated.Domain\obj\Debug\net8.0\CashFlow.Consolidated.Domain.sourcelink.json
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Consolidated\CashFlow.Consolidated.Domain\obj\Debug\net8.0\CashFlow.Consolidated.Domain.dll
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Consolidated\CashFlow.Consolidated.Domain\obj\Debug\net8.0\refint\CashFlow.Consolidated.Domain.dll
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Consolidated\CashFlow.Consolidated.Domain\obj\Debug\net8.0\CashFlow.Consolidated.Domain.pdb
+D:\github\hadawardci\desafio-arquiteto-software-2408\src\CashFlow\CashFlow.Consolidated\CashFlow.Consolidated.Domain\obj\Debug\net8.0\ref\CashFlow.Consolidated.Domain.dll

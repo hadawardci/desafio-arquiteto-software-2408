@@ -1,0 +1,129 @@
+version: '3.7'
+
+services:
+
+  # mongo1:
+  #   image: mongo:8.0.0-rc20
+  #   container_name: mongo1
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - mongo1_data:/data/db
+  #   networks:
+  #     - mongo_network
+  #   command: ["mongod", "--replSet", "rs0"]
+
+  # mongo2:
+  #   image: mongo:8.0.0-rc20
+  #   container_name: mongo2
+  #   ports:
+  #     - "27018:27017"
+  #   volumes:
+  #     - mongo2_data:/data/db
+  #   networks:
+  #     - mongo_network
+  #   command: ["mongod", "--replSet", "rs0"]
+
+  # mongo3:
+  #   image: mongo:8.0.0-rc20
+  #   container_name: mongo3
+  #   ports:
+  #     - "27019:27017"
+  #   volumes:
+  #     - mongo3_data:/data/db
+  #   networks:
+  #     - mongo_network
+  #   command: ["mongod", "--replSet", "rs0"]
+
+  # mongo_setup:
+  #   image: mongo:8.0.0-rc20
+  #   container_name: mongo_setup
+  #   depends_on:
+  #     - mongo1
+  #     - mongo2
+  #     - mongo3
+  #   networks:
+  #     - mongo_network
+  #   entrypoint: >
+  #     /bin/sh -c '
+  #       sleep 10 &&
+  #       mongo --host mongo1 --eval "
+  #         rs.initiate({
+  #           _id: 'rs0',
+  #           members: [
+  #             { _id: 0, host: 'mongo1:27017' },
+  #             { _id: 1, host: 'mongo2:27017' },
+  #             { _id: 2, host: 'mongo3:27017' }
+  #           ]
+  #         });
+  #         rs.status();
+  #       "'
+
+  # mongo:
+  #   image: mongo:8.0.0-rc20
+  #   container_name: mongo    
+  #   restart: unless-stopped
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: root
+  #     MONGO_INITDB_ROOT_PASSWORD: senha
+  #   ports:
+  #    - "27017:27017"
+
+  mysql:
+    image: mysql:5.7
+    container_name: auth_db
+    hostname: auth_db
+    restart: unless-stopped    
+    environment:
+      MYSQL_ROOT_PASSWORD: senha
+      MYSQL_DATABASE: keycloak
+    ports:
+      - "3306:3306"    
+
+  keycloak:
+    container_name: auth
+    image: quay.io/keycloak/keycloak:25.0.4
+    hostname: keycloak
+    restart: unless-stopped
+    volumes:
+      - ./realm-config:/opt/keycloak/data/import
+    environment:
+      - KEYCLOAK_ADMIN=root
+      - KEYCLOAK_ADMIN_PASSWORD=senha
+      - KC_DB=mysql
+      - KC_DB_URL_HOST=auth_db
+      - KC_DB_URL_PORT=3306
+      - KC_DB_SCHEMA=keycloak
+      - KC_DB_USERNAME=root
+      - KC_DB_PASSWORD=senha
+    ports:
+      - 8080:8080
+    command:
+      - start-dev
+      - --import-realm
+    depends_on:
+      - mysql
+  
+  redis:
+    image: redis:alpine3.20
+    container_name: redis
+    hostname: redis
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+
+  rabbitmq:
+    image: rabbitmq:3.13.7-management-alpine
+    container_name: rabbitmq
+    hostname: rabbitmq
+    restart: unless-stopped
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  # artillery:
+  #   container_name: artillery
+  #   build:
+  #     context: ./artillery
+  #   depends_on:
+  #     - keycloak

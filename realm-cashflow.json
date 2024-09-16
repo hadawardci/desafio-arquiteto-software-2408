@@ -1,0 +1,249 @@
+{
+  "id": "cash-flow",
+  "realm": "cash-flow",
+  "enabled": true,
+  "roles": {
+    "realm": [
+      {
+        "name": "add-entry",
+        "description": "Permission to add entries"
+      },
+      {
+        "name": "view-entry",
+        "description": "Permission to view entries"
+      },
+      {
+        "name": "view-consolidated",
+        "description": "Permission to view consolidated data"
+      },
+      {
+        "name": "partial-daily",
+        "description": "Permission to get partial data by days from entries"
+      }
+    ],
+    "client": {
+      "client-web": [
+        {
+          "name": "add-entry",
+          "description": "Client permission to add entries"
+        },
+        {
+          "name": "view-entry",
+          "description": "Client permission to view entries"
+        },
+        {
+          "name": "view-consolidated",
+          "description": "Client permission to view consolidated data"
+        },
+        {
+          "name": "partial-daily",
+          "description": "Permission to get partial data by days from entries"
+        }
+      ]
+    }
+  },
+  "clientScopes": [
+    {
+      "name": "short-session",
+      "description": "Short session scope",
+      "protocol": "openid-connect",
+      "attributes": {
+        "access.token.lifespan": "1800",
+        "refresh.token.lifespan": "86400"
+      },
+      "protocolMappers": [
+        {
+          "name": "short-session-lifespan",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-access-token-mapper",
+          "config": {
+            "access.token.lifespan": "1800",
+            "refresh.token.lifespan": "86400"
+          }
+        }
+      ]
+    },
+    {
+      "name": "acr",
+      "description": "OpenID Connect scope for add acr (authentication context class reference) to the token",
+      "protocol": "openid-connect",
+      "attributes": {
+        "access.token.lifespan": "36000"
+      }
+    },
+    {
+      "name": "address",
+      "description": "OpenID Connect built-in scope: address",
+      "protocol": "openid-connect"
+    },
+    {
+      "name": "basic",
+      "description": "OpenID Connect scope for add all basic claims to the token",
+      "protocol": "openid-connect"
+    },
+    {
+      "name": "email",
+      "description": "OpenID Connect built-in scope: email",
+      "protocol": "openid-connect"
+    },
+    {
+      "name": "microprofile-jwt",
+      "description": "Microprofile - JWT built-in scope",
+      "protocol": "openid-connect"
+    },
+    {
+      "name": "offline_access",
+      "description": "OpenID Connect built-in scope: offline_access",
+      "protocol": "openid-connect"
+    },
+    {
+      "name": "phone",
+      "description": "OpenID Connect built-in scope: phone",
+      "protocol": "openid-connect"
+    },
+    {
+      "name": "profile",
+      "description": "OpenID Connect built-in scope: profile",
+      "protocol": "openid-connect"
+    },
+    {
+      "name": "role_list",
+      "description": "SAML role list",
+      "protocol": "saml"
+    },
+    {
+      "name": "roles",
+      "description": "OpenID Connect scope for add user roles to the access token",
+      "protocol": "openid-connect"
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "client-web",
+      "enabled": true,
+      "directAccessGrantsEnabled": true,
+      "publicClient": false,
+      "serviceAccountsEnabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "my-client-secret",
+      "adminUrl": "http://localhost:8080",
+      "redirectUris": [
+        "https://localhost:7107/*",
+        "https://localhost:7015"
+      ],
+      "protocol": "openid-connect",
+      "webOrigins": [
+        "*"
+      ],
+      "attributes": {
+        "access.token.lifespan": "36000",
+        "refresh.token.lifespan": "172800"
+      },
+      "defaultClientScopes": [
+        "roles",
+        "email",
+        "profile",
+        "basic",
+        "acr"
+      ],
+      "optionalClientScopes": [
+        "short-session"
+      ],
+      "protocolMappers": [
+        {
+          "name": "audience",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "config": {
+            "included.client.audience": "client-web",
+            "id.token.claim": "true",
+            "access.token.claim": "true"
+          }
+        },
+        {
+          "name": "realm_access",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-realm-role-mapper",
+          "config": {
+            "access.token.claim": "true",
+            "claim.name": "realm_access",
+            "jsonType.label": "Json"
+          }
+        },
+        {
+          "name": "resource_access",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-client-role-mapper",
+          "config": {
+            "access.token.claim": "true",
+            "claim.name": "resource_access",
+            "jsonType.label": "Json"
+          }
+        },
+        {
+          "name": "scope",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-client-role-mapper",
+          "config": {
+            "access.token.claim": "true",
+            "claim.name": "scope",
+            "jsonType.label": "Json"
+          }
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "enabled": true,
+      "firstName": "Admin",
+      "lastName": "User",
+      "email": "admin@example.com",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "senha",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "add-entry",
+        "view-entry",
+        "view-consolidated"
+      ],
+      "clientRoles": {
+        "client-web": [
+          "add-entry",
+          "view-entry",
+          "view-consolidated"
+        ]
+      }
+    },
+    {
+      "username": "robot",
+      "enabled": true,
+      "firstName": "Mr",
+      "lastName": "Robot",
+      "email": "mr-robot@example.com",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "senha",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "partial-daily"
+      ],
+      "clientRoles": {
+        "client-web": [
+          "partial-daily"
+        ]
+      },
+      "attributes": {
+        "short-session": "true"
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+config:
+  target: 'https://localhost:7107'
+  tls:
+    rejectUnauthorized: false
+  http:
+    timeout: 60
+
+  phases:
+    - duration: 10
+      arrivalRate: 10
+      name: Warm up the API
+    - duration: 10
+      arrivalRate: 25
+      http:
+        timeout: 10
+      name: Ramp up load
+    - duration: 10
+      arrivalRate: 50
+      http:
+        timeout: 10
+      name: Spike phase
+      
+scenarios:
+  - name: Increase
+    flow:
+        - post:
+            url: '/api/entry'
+            json:
+                amount: 100
+                description: 'Increase 100'
+            expect:
+                - statusCode: 204
+        - post:
+            url: '/api/entry'
+            json:
+                amount: 1275.02
+                description: 'Increase 1k+'        
+            expect:
+                - statusCode: 204
+  - name: Decrease
+    flow:
+        - post:
+            url: '/api/entry'
+            json:
+                amount: -150
+                description: 'Decrease'        
+            expect:
+                - statusCode: 204

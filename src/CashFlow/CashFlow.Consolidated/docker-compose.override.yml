@@ -1,0 +1,12 @@
+services:
+  cashflow_consolidated_api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=7015
+      - ASPNETCORE_HTTPS_PORTS=5152
+    ports:
+      - "7015"
+      - "5152"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro

@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashFlow.Entries.Api", "CashFlow.Entries.Api\CashFlow.Entries.Api.csproj", "{9AC6E03F-EC58-4258-9043-75F2A43F17B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashFlow.Entries.Application", "CashFlow.Entries.Application\CashFlow.Entries.Application.csproj", "{F9582994-5C15-4AFD-AC7A-E73DC60E9C77}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashFlow.Entries.Domain", "CashFlow.Entries.Domain\CashFlow.Entries.Domain.csproj", "{BED72477-962E-4B90-9972-7BBDD28DF7B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashFlow.Entries.Infra.Data", "CashFlow.Entries.Infra.Data\CashFlow.Entries.Infra.Data.csproj", "{1AD31D0B-9663-4229-A663-15F2FF8C99F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F86FF32E-FDEE-4F20-BED6-10943C4B190F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LocalEnv", "LocalEnv", "{D3E06A36-EC31-4192-B477-8EFC582B4C43}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\docker-compose.yml = ..\..\..\docker-compose.yml
+		..\..\..\artillery\Dockerfile = ..\..\..\artillery\Dockerfile
+		..\..\..\realm-config\realm-cashflow.json = ..\..\..\realm-config\realm-cashflow.json
+		..\..\..\artillery\test-config.yml = ..\..\..\artillery\test-config.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service Domain", "Service Domain", "{A9947788-C5B3-4083-8543-A52BC730417C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlow.Entries.UnitTests", "CashFlow.Entries.UnitTests\CashFlow.Entries.UnitTests.csproj", "{A2F69501-376B-404B-B7E3-ED51685B705B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AC6E03F-EC58-4258-9043-75F2A43F17B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AC6E03F-EC58-4258-9043-75F2A43F17B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AC6E03F-EC58-4258-9043-75F2A43F17B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AC6E03F-EC58-4258-9043-75F2A43F17B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9582994-5C15-4AFD-AC7A-E73DC60E9C77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9582994-5C15-4AFD-AC7A-E73DC60E9C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9582994-5C15-4AFD-AC7A-E73DC60E9C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9582994-5C15-4AFD-AC7A-E73DC60E9C77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED72477-962E-4B90-9972-7BBDD28DF7B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED72477-962E-4B90-9972-7BBDD28DF7B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED72477-962E-4B90-9972-7BBDD28DF7B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED72477-962E-4B90-9972-7BBDD28DF7B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AD31D0B-9663-4229-A663-15F2FF8C99F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AD31D0B-9663-4229-A663-15F2FF8C99F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AD31D0B-9663-4229-A663-15F2FF8C99F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AD31D0B-9663-4229-A663-15F2FF8C99F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2F69501-376B-404B-B7E3-ED51685B705B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2F69501-376B-404B-B7E3-ED51685B705B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2F69501-376B-404B-B7E3-ED51685B705B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2F69501-376B-404B-B7E3-ED51685B705B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9AC6E03F-EC58-4258-9043-75F2A43F17B0} = {A9947788-C5B3-4083-8543-A52BC730417C}
+		{F9582994-5C15-4AFD-AC7A-E73DC60E9C77} = {A9947788-C5B3-4083-8543-A52BC730417C}
+		{BED72477-962E-4B90-9972-7BBDD28DF7B7} = {A9947788-C5B3-4083-8543-A52BC730417C}
+		{1AD31D0B-9663-4229-A663-15F2FF8C99F5} = {A9947788-C5B3-4083-8543-A52BC730417C}
+		{A2F69501-376B-404B-B7E3-ED51685B705B} = {F86FF32E-FDEE-4F20-BED6-10943C4B190F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8B2460F-FB42-4C37-BDC3-C76561A24F26}
+	EndGlobalSection
+EndGlobal

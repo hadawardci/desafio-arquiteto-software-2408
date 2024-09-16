@@ -1,0 +1,5 @@
+services:
+  cashflow_consolidated_api:
+    build:
+      context: .
+      dockerfile: CashFlow.Consolidated.Api/Dockerfile
